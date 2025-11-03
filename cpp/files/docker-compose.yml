@@ -1,0 +1,14 @@
+services:
+  cpp:
+    build:
+      context: .
+    image: cpp
+    container_name: cpp
+    stdin_open: true
+    tty: true
+    volumes:
+      - ${HOME_DIR}:/root
+      - ${WORK_DIR}:/root/Work
+      - ${HOME}/.config/nvim:/root/.config/nvim
+      - ${HOME}/.ssh:/root/.ssh
+    restart: unless-stopped
