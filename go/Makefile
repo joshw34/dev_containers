@@ -1,4 +1,4 @@
-CONTAINER_NAME=cpp
+CONTAINER_NAME=go
 
 #Local username, uid and gid (container will create matching user)
 USER_LOGIN = $(shell whoami)

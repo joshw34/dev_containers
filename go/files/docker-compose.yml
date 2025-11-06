@@ -1,15 +1,15 @@
-name: cpp
+name: go
 
 services:
-  cpp:
+  go:
     build:
       context: .
       args:
         - UID=${UID}
         - GID=${GID}
         - USER_LOGIN=${USER_LOGIN}
-    image: cpp
-    container_name: cpp
+    image: go
+    container_name: go
     user: "${UID}:${GID}"
     environment:
       - DISPLAY=${DISPLAY}
@@ -22,5 +22,5 @@ services:
       - ${HOST_SSH_DIR}:${CONTAINER_SSH_DIR}
     stdin_open: true
     tty: true
-    network_mode: "host"
     restart: unless-stopped
+    network_mode: "host"

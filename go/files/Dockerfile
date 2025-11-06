@@ -6,33 +6,25 @@ ARG USER_LOGIN
 
 COPY ./entrypoint.sh /usr/local/bin/entrypoint.sh
 
-#Copy pre-compiled mlx as it doesn't compile on fedora
-COPY ./mlx/libmlx.a /usr/local/lib
-COPY ./mlx/mlx.h /usr/local/include
-COPY ./mlx/man3/ /usr/local/man/man3/
-
 RUN chmod +x /usr/local/bin/entrypoint.sh && \
     #Install fedora packages
     dnf install -y \
-    bear \
     clang \
+    curl \
     fish \
     git \
-    libbsd-devel \
-    libX11-devel \
-    libXext-devel \
-    lldb \
     man-db \
     man-pages \
     neovim \
-    pipx \
-    readline-devel \
-    unzip \
-    valgrind && \
-    #Install norminette
-    pipx install norminette && \
+    unzip && \
     #Create temp build directory
     mkdir -p /home/${USER_LOGIN}/build && \
+    #Install go
+    cd /home/${USER_LOGIN}/build && \
+    curl -sL 'https://go.dev/VERSION?m=text' | head -1 > ./go_version && \
+    GO_VERSION=$(cat ./go_version) && \
+    curl -Lo go.tar.gz https://go.dev/dl/${GO_VERSION}.linux-amd64.tar.gz && \
+    rm -rf /usr/local/go && tar -C /usr/local -xzf go.tar.gz && \
     #Install lazygit
     cd /home/${USER_LOGIN}/build && \
     LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*') && \

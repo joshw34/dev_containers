@@ -3,13 +3,19 @@ set -e  # Exit on error
 
 FISH_CONFIG_DIR="$HOME/.config/fish"
 FISH_CONFIG_FILE="$FISH_CONFIG_DIR/config.fish"
+GO_BIN_SYS="/usr/local/go/bin"
+GO_BIN_LOCAL="$HOME/go/bin/"
 
 if [ ! -f "$FISH_CONFIG_FILE" ]; then
   mkdir -p "$FISH_CONFIG_DIR"
   touch "$FISH_CONFIG_FILE"
   echo "set fish_greeting" > "$FISH_CONFIG_FILE"
-  echo "pipx ensurepath" >> "$FISH_CONFIG_FILE"
+  echo "set PATH $PATH:$GO_BIN_SYS:$GO_BIN_LOCAL" >> "$FISH_CONFIG_FILE"
 fi
+
+export PATH=$PATH:$GO_BIN_SYS:$GO_BIN_LOCAL
+#Install go_pls
+go install golang.org/x/tools/gopls@latest
 
 # Configure git
 echo "Configuring git..."
@@ -45,10 +51,6 @@ alias lsg="eza -l --header --no-permissions --total-size --no-user --no-time --g
 alias lst="eza -1T --icons=always"
 alias lsat="eza -a -1T --icons=always"
 EOF
-fi
-
-if ! grep -q 'cd $HOME' "$FISH_CONFIG_FILE"; then
-  echo "cd $HOME" >> "$FISH_CONFIG_FILE"
 fi
 
 exec fish
