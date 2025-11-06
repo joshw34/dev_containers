@@ -14,7 +14,6 @@ if [ ! -f "$FISH_CONFIG_FILE" ]; then
   mkdir -p "$FISH_CONFIG_DIR"/themes
   mv "$HOME"/catppuccin_theme/themes/"Catppuccin Mocha.theme" "$FISH_CONFIG_DIR"/themes
   rm -rf "$HOME"/catppuccin_theme
-  echo "pipx ensurepath" >> "$FISH_CONFIG_FILE"
 fi
 
 # Configure git

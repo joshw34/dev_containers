@@ -10,9 +10,16 @@ if [ ! -f "$FISH_CONFIG_FILE" ]; then
   mkdir -p "$FISH_CONFIG_DIR"
   touch "$FISH_CONFIG_FILE"
   echo "set fish_greeting" > "$FISH_CONFIG_FILE"
+  echo "fish_config prompt choose astronaut" >> "$FISH_CONFIG_FILE"
+  echo 'fish_config theme choose "Catppuccin Mocha"' >> "$FISH_CONFIG_FILE"
+  git clone https://github.com/catppuccin/fish.git "$HOME"/catppuccin_theme
+  mkdir -p "$FISH_CONFIG_DIR"/themes
+  mv "$HOME"/catppuccin_theme/themes/"Catppuccin Mocha.theme" "$FISH_CONFIG_DIR"/themes
+  rm -rf "$HOME"/catppuccin_theme
   echo "set PATH $PATH:$GO_BIN_SYS:$GO_BIN_LOCAL" >> "$FISH_CONFIG_FILE"
 fi
 
+#Temp export for script to install gopls
 export PATH=$PATH:$GO_BIN_SYS:$GO_BIN_LOCAL
 #Install go_pls
 go install golang.org/x/tools/gopls@latest

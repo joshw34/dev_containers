@@ -22,5 +22,6 @@ services:
       - ${HOST_SSH_DIR}:${CONTAINER_SSH_DIR}
     stdin_open: true
     tty: true
-    restart: unless-stopped
     network_mode: "host"
+    hostname: go
+    restart: unless-stopped

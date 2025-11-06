@@ -1,27 +1,23 @@
-name: cpp
+name: claude
 
 services:
-  cpp:
+  claude:
     build:
       context: .
       args:
         - UID=${UID}
         - GID=${GID}
         - USER_LOGIN=${USER_LOGIN}
-    image: cpp
-    container_name: cpp
+    image: claude
+    container_name: claude
     user: "${UID}:${GID}"
     environment:
       - DISPLAY=${DISPLAY}
     volumes:
-      - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - ~/.Xauthority:/root/.Xauthority:rw
       - ${HOST_CONTAINER_HOME_DIR}:${CONTAINER_HOME_DIR}
-      - ${HOST_NVIM_CONFIG_DIR}:${CONTAINER_NVIM_CONFIG_DIR}
       - ${HOST_WORK_DIR}:${CONTAINER_WORK_DIR}
-      - ${HOST_SSH_DIR}:${CONTAINER_SSH_DIR}
     stdin_open: true
     tty: true
     network_mode: "host"
-    hostname: cpp
+    hostname: claude
     restart: unless-stopped
