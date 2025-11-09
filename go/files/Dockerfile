@@ -11,12 +11,12 @@ RUN chmod +x /usr/local/bin/entrypoint.sh && \
     dnf install -y \
     clang \
     curl \
-    fish \
     git \
     man-db \
     man-pages \
     neovim \
-    unzip && \
+    unzip \
+    zsh && \
     #Create temp build directory
     mkdir -p /home/${USER_LOGIN}/build && \
     #Install go

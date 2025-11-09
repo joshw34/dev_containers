@@ -11,7 +11,6 @@ RUN chmod +x /usr/local/bin/entrypoint.sh && \
     dnf install -y \
     bear \
     clang \
-    fish \
     git \
     lldb \
     man-db \
@@ -19,7 +18,8 @@ RUN chmod +x /usr/local/bin/entrypoint.sh && \
     ncurses-devel \
     neovim \
     unzip \
-    valgrind && \
+    valgrind \
+    zsh && \
     #Create temp build directory
     mkdir -p /home/${USER_LOGIN}/build && \
     #Install lazygit

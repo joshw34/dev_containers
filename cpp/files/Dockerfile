@@ -16,7 +16,6 @@ RUN chmod +x /usr/local/bin/entrypoint.sh && \
     dnf install -y \
     bear \
     clang \
-    fish \
     git \
     libbsd-devel \
     libX11-devel \
@@ -28,7 +27,8 @@ RUN chmod +x /usr/local/bin/entrypoint.sh && \
     pipx \
     readline-devel \
     unzip \
-    valgrind && \
+    valgrind \
+    zsh && \
     #Install norminette
     pipx install norminette && \
     #Create temp build directory
