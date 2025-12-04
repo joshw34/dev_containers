@@ -1,10 +1,5 @@
 CONTAINER_NAME=cpp
 
-#Local username, uid and gid (container will create matching user)
-USER_LOGIN = $(shell whoami)
-UID = $(shell id -u)
-GID = $(shell id -g)
-
 #Host directories to be shared
 HOST_WORK_DIR=$(HOME)/Work
 HOST_SSH_DIR=$(HOME)/.ssh
@@ -20,7 +15,7 @@ HOST_CONTAINER_WORK_DIR=$(HOST_CONTAINER_HOME_DIR)/Work
 HOST_CONTAINER_NVIM_CONFIG_DIR=$(HOST_CONTAINER_HOME_DIR)/.config/nvim
 
 #Container mount points (where hosts mounts will be located inside container)
-CONTAINER_HOME_DIR=$(HOME)
+CONTAINER_HOME_DIR=/root
 CONTAINER_WORK_DIR=$(CONTAINER_HOME_DIR)/Work
 CONTAINER_SSH_DIR=$(CONTAINER_HOME_DIR)/.ssh
 CONTAINER_NVIM_CONFIG_DIR=$(CONTAINER_HOME_DIR)/.config/nvim

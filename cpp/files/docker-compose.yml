@@ -4,13 +4,8 @@ services:
   cpp:
     build:
       context: .
-      args:
-        - UID=${UID}
-        - GID=${GID}
-        - USER_LOGIN=${USER_LOGIN}
     image: cpp
     container_name: cpp
-    user: "${UID}:${GID}"
     environment:
       - DISPLAY=${DISPLAY}
       - SSH_AUTH_SOCK=${SSH_AUTH_SOCK}
