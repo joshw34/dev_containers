@@ -10,6 +10,7 @@ COPY ./mlx/man3/ /usr/local/man/man3/
 RUN chmod +x /usr/local/bin/entrypoint.sh && \
     #Install fedora packages
     dnf install -y \
+    bat \
     bear \
     clang \
     git \
