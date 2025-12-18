@@ -4,13 +4,8 @@ services:
   claude:
     build:
       context: .
-      args:
-        - UID=${UID}
-        - GID=${GID}
-        - USER_LOGIN=${USER_LOGIN}
     image: claude
     container_name: claude
-    user: "${UID}:${GID}"
     environment:
       - DISPLAY=${DISPLAY}
     volumes:

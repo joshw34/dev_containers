@@ -16,7 +16,7 @@ HOST_CONTAINER_HOME_DIR=$(HOST_CONTAINER_DATA_DIR)/$(CONTAINER_NAME)
 HOST_CONTAINER_WORK_DIR=$(HOST_CONTAINER_HOME_DIR)/Work
 
 #Container mount points (where hosts mounts will be located inside container)
-CONTAINER_HOME_DIR=$(HOME)
+CONTAINER_HOME_DIR=/root
 CONTAINER_WORK_DIR=$(CONTAINER_HOME_DIR)/Work
 
 COMPOSE_FILE = ./files/docker-compose.yml
