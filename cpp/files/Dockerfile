@@ -25,7 +25,7 @@ RUN chmod +x /usr/local/bin/entrypoint.sh && \
     readline-devel \
     unzip \
     valgrind \
-    zsh && \
+    zsh --setopt='tsflags=' && \
     #Install norminette
     pipx install norminette && \
     #Create temp build directory

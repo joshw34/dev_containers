@@ -1,0 +1,17 @@
+name: jellyfin
+
+services:
+  claude:
+    build:
+      context: .
+    image: jellyfin
+    container_name: jellyfin
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - ${HOST_CONTAINER_HOME_DIR}:${CONTAINER_HOME_DIR}
+    stdin_open: true
+    tty: true
+    network_mode: "host"
+    hostname: jellyfin
+    restart: unless-stopped

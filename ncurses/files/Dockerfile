@@ -19,7 +19,7 @@ RUN chmod +x /usr/local/bin/entrypoint.sh && \
     neovim \
     unzip \
     valgrind \
-    zsh && \
+    zsh --setopt='tsflags=' && \
     #Create temp build directory
     mkdir -p /home/${USER_LOGIN}/build && \
     #Install lazygit

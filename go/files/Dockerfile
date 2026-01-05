@@ -16,7 +16,7 @@ RUN chmod +x /usr/local/bin/entrypoint.sh && \
     man-pages \
     neovim \
     unzip \
-    zsh && \
+    zsh --setopt='tsflags=' && \
     #Create temp build directory
     mkdir -p /home/${USER_LOGIN}/build && \
     #Install go
