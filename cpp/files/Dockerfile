@@ -12,6 +12,7 @@ RUN chmod +x /usr/local/bin/entrypoint.sh && \
     dnf install -y \
     bat \
     bear \
+    btop \
     clang \
     git \
     libbsd-devel \
