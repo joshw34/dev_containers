@@ -20,8 +20,8 @@ CONTAINER_WORK_DIR=$(CONTAINER_HOME_DIR)/Work
 CONTAINER_SSH_DIR=$(CONTAINER_HOME_DIR)/.ssh
 CONTAINER_NVIM_CONFIG_DIR=$(CONTAINER_HOME_DIR)/.config/nvim
 
-COMPOSE_FILE = ./files/docker-compose.yml
-ENV_FILE = ./files/.env
+COMPOSE_FILE = docker-compose.yml
+ENV_FILE = .env
 
 all: setup build up
 
@@ -79,4 +79,4 @@ re: fclean all
 logs:
 	docker compose logs -f
 
-.PHONY: all setup env-file secrets data-dirs build up down clean fclean re logs
+.PHONY: all setup env-file data-dirs build up down clean fclean re logs

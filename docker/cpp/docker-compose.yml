@@ -2,10 +2,10 @@ name: cpp
 
 services:
   cpp:
-    build:
-      context: .
-    image: cpp
+    image: ghcr.io/dev_containers/cpp-dev:latest
+    pull_policy: always
     container_name: cpp
+    command: /bin/bash -c "/usr/local/bin/setup.sh && sleep infinity"
     environment:
       - DISPLAY=${DISPLAY}
       - SSH_AUTH_SOCK=${SSH_AUTH_SOCK}
@@ -17,8 +17,6 @@ services:
       - ${HOST_WORK_DIR}:${CONTAINER_WORK_DIR}
       - ${HOST_SSH_DIR}:${CONTAINER_SSH_DIR}
       - ${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK}
-    stdin_open: true
-    tty: true
     network_mode: "host"
     hostname: cpp
     restart: unless-stopped

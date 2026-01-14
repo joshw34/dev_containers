@@ -9,8 +9,8 @@ HIGHLIGHTING_DIR="$OMZ_CUSTOM/plugins/zsh-syntax-highlighting"
 
 # Configure git
 echo "Configuring git..."
-git config --global user.email "joshw34@joshw34.com"
-git config --global user.name "joshw34"
+git config --global user.email "joshw@joshw.com"
+git config --global user.name "joshw"
 
 # Create .zshrc if not already present
 if [ ! -f "$ZSHRC" ]; then
@@ -60,5 +60,3 @@ alias lst="eza -1T --icons=always"
 alias lsat="eza -a -1T --icons=always"
 EOF
 fi
-
-exec zsh

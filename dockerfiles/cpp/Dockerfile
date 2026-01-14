@@ -1,9 +1,10 @@
 FROM archlinux:latest
 
-COPY ./mlx/libmlx.a /usr/local/lib
-COPY ./mlx/mlx.h /usr/local/include
-COPY ./mlx/man3/ /usr/local/man/man3/
-COPY ./norminette/norminette-3.3.55-1-x86_64.pkg.tar.zst /tmp/norminette-3.3.55-1-x86_64.pkg.tar.zst
+COPY ./files/mlx/libmlx.a /usr/local/lib
+COPY ./files/mlx/mlx.h /usr/local/include
+COPY ./files/mlx/man3/ /usr/local/man/man3/
+COPY ./files/norminette-3.3.55-1-x86_64.pkg.tar.zst /tmp/norminette-3.3.55-1-x86_64.pkg.tar.zst
+COPY ./files/setup.sh /usr/local/bin/setup.sh
 
 RUN pacman -Syu --noconfirm && \
     pacman -S --noconfirm --needed \
@@ -29,6 +30,7 @@ RUN pacman -Syu --noconfirm && \
     valgrind \
     zsh && \
     pacman -U --noconfirm /tmp/norminette-3.3.55-1-x86_64.pkg.tar.zst && \
+    rm /tmp/norminette-3.3.55-1-x86_64.pkg.tar.zst && \
     curl -fsSL https://claude.ai/install.sh | bash && \
     pacman -Scc --noconfirm
 
