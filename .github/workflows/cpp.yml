@@ -6,7 +6,7 @@ on:
   push:
     branches: [main]
     paths:
-      - './dockerfiles/cpp/Dockerfile'
+      - 'dockerfiles/cpp/Dockerfile'
       - '.github/workflows/cpp.yml'
   workflow_dispatch:
 
