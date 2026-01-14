@@ -2,7 +2,7 @@ name: cpp
 
 services:
   cpp:
-    image: ghcr.io/dev_containers/cpp-dev:latest
+    image: ghcr.io/joshw34/dev_containers/cpp-dev:latest
     pull_policy: always
     container_name: cpp
     command: /bin/bash -c "/usr/local/bin/setup.sh && sleep infinity"
