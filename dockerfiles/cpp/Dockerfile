@@ -6,7 +6,8 @@ COPY ./files/mlx/man3/ /usr/local/man/man3/
 COPY ./files/norminette-3.3.55-1-x86_64.pkg.tar.zst /tmp/norminette-3.3.55-1-x86_64.pkg.tar.zst
 COPY ./files/setup.sh /usr/local/bin/setup.sh
 
-RUN pacman -Syu --noconfirm && \
+RUN chmod +x /usr/local/bin/setup.sh && \
+    pacman -Syu --noconfirm && \
     pacman -S --noconfirm --needed \
     base-devel \
     bat \
