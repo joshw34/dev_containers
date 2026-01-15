@@ -29,9 +29,6 @@ setup: env-file data-dirs
 
 env-file:
 	@if [ ! -f $(ENV_FILE) ]; then \
-		echo "USER_LOGIN=$(USER_LOGIN)" > $(ENV_FILE); \
-		echo "UID=$(UID)" >> $(ENV_FILE); \
-		echo "GID=$(GID)" >> $(ENV_FILE); \
 		echo "HOST_CONTAINER_HOME_DIR=$(HOST_CONTAINER_HOME_DIR)" >> $(ENV_FILE); \
 		echo "HOST_WORK_DIR=$(HOST_WORK_DIR)" >> $(ENV_FILE); \
 		echo "HOST_SSH_DIR=$(HOST_SSH_DIR)" >> $(ENV_FILE); \

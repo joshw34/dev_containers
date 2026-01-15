@@ -8,7 +8,7 @@ services:
     command: /bin/bash -c "/usr/local/bin/setup.sh && sleep infinity"
     environment:
       - DISPLAY=${DISPLAY}
-      - SSH_AUTH_SOCK=${SSH_AUTH_SOCK}
+#      - SSH_AUTH_SOCK=${SSH_AUTH_SOCK}
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ~/.Xauthority:/${CONTAINER_HOME_DIR}/.Xauthority:rw
@@ -16,7 +16,7 @@ services:
       - ${HOST_NVIM_CONFIG_DIR}:${CONTAINER_NVIM_CONFIG_DIR}
       - ${HOST_WORK_DIR}:${CONTAINER_WORK_DIR}
       - ${HOST_SSH_DIR}:${CONTAINER_SSH_DIR}
-      - ${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK}
+      #- ${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK}
     network_mode: "host"
     hostname: cpp
     restart: unless-stopped

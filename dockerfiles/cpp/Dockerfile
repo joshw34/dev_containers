@@ -25,6 +25,7 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     lldb \
     man-pages \
     neovim \
+    openssh \
     readline \
     unzip \
     unrar \
