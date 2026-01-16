@@ -1,8 +1,0 @@
-{
-  "name": "C++ Webserv",
-  "image": "cpp-vscode:latest",
-  "remoteUser": "vscode",
-  "runArgs": [
-    "--security-opt=label=disable"
-  ]
-}

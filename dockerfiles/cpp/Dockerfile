@@ -27,6 +27,7 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     neovim \
     openssh \
     readline \
+    tree-sitter-cli \
     unzip \
     unrar \
     valgrind \
