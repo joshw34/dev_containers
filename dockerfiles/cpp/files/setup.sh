@@ -8,7 +8,6 @@ AUTOSUGGEST_DIR="$OMZ_CUSTOM/plugins/zsh-autosuggestions"
 HIGHLIGHTING_DIR="$OMZ_CUSTOM/plugins/zsh-syntax-highlighting"
 
 # Configure git
-echo "Configuring git..."
 git config --global user.email "joshw@joshw.com"
 git config --global user.name "joshw"
 
@@ -61,4 +60,6 @@ alias lsat="eza -a -1T --icons=always"
 EOF
 fi
 
-export PATH="$PATH:$HOME/.local/bin"
+if ! grep -q 'export PATH="$PATH:$HOME/.local/bin"' "$ZSHRC"; then
+  echo 'export PATH="$PATH:$HOME/.local/bin"' >> $ZSHRC
+fi
