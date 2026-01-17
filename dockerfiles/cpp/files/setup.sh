@@ -60,3 +60,5 @@ alias lst="eza -1T --icons=always"
 alias lsat="eza -a -1T --icons=always"
 EOF
 fi
+
+export PATH="$PATH:$HOME/.local/bin"
