@@ -41,7 +41,7 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     pacman -Scc --noconfirm && \
     mandb && \
     useradd -m -s /usr/sbin/zsh cpp-dev && \
-    chown -R /home/cpp-dev cpp-dev
+    chown -R cpp-dev /home/cpp-dev
 
 USER cpp-dev
 
