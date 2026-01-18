@@ -40,7 +40,10 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     curl -fsSL https://claude.ai/install.sh | bash && \
     pacman -Scc --noconfirm && \
     mandb && \
-    useradd -m -s /usr/sbin/zsh cpp-dev
+    useradd -m -s /usr/sbin/zsh cpp-dev && \
+    chown -R /home/cpp-dev
+
+USER cpp-dev
 
 ENV DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 ENV TERM=xterm-256color
