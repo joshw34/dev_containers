@@ -5,9 +5,11 @@ COPY ./files/mlx/mlx.h /usr/local/include
 COPY ./files/mlx/man3/ /usr/local/man/man3/
 COPY ./files/norminette-3.3.55-1-x86_64.pkg.tar.zst /tmp/norminette-3.3.55-1-x86_64.pkg.tar.zst
 COPY ./files/setup.sh /usr/local/bin/setup.sh
+COPY ./files/start_ssh.sh /usr/local/bin/start_ssh.sh
 
 RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     chmod +x /usr/local/bin/setup.sh && \
+    chmod +x /usr/local/bin/start_ssh.sh && \
     pacman -Syu --noconfirm && \
     pacman -S --noconfirm --needed \
     base-devel \
@@ -18,6 +20,7 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     curl \
     debuginfod \
     eza \
+    gdb \
     git \
     lazygit \
     libbsd \
