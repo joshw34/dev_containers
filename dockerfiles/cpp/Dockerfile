@@ -6,6 +6,7 @@ COPY ./files/mlx/man3/ /usr/local/man/man3/
 COPY ./files/norminette-3.3.55-1-x86_64.pkg.tar.zst /tmp/norminette-3.3.55-1-x86_64.pkg.tar.zst
 COPY ./files/setup.sh /usr/local/bin/setup.sh
 COPY ./files/start_ssh.sh /usr/local/bin/start_ssh.sh
+COPY ./files/sshd_config /etc/ssh/sshd_config
 
 RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     chmod +x /usr/local/bin/setup.sh && \
