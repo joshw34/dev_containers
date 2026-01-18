@@ -39,7 +39,8 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     rm /tmp/norminette-3.3.55-1-x86_64.pkg.tar.zst && \
     curl -fsSL https://claude.ai/install.sh | bash && \
     pacman -Scc --noconfirm && \
-    mandb
+    mandb &&
+    useradd -m -s /usr/sbin/zsh cpp-dev
 
 ENV DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 ENV TERM=xterm-256color
