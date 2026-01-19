@@ -6,7 +6,7 @@ PasswordAuthentication no
 AuthenticationMethods publickey
 
 # Use writable authorized_keys location
-AuthorizedKeysFile /root/.ssh-writable/authorized_keys
+AuthorizedKeysFile /root/.ssh/authorized_keys
 
 # Security
 StrictModes yes
