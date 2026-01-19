@@ -23,6 +23,7 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     eza \
     gdb \
     git \
+    github-cli \
     lazygit \
     libbsd \
     libx11 \
