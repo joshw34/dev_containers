@@ -1,12 +1,12 @@
-name: Build Arch C/C++ Dev Container
+name: Build Arch C/C++ Minilibx Dev Container
 on:
   schedule:
     - cron: '0 2 * * 0'
   push:
     branches: [main]
     paths:
-      - 'dockerfiles/cpp/**'
-      - '.github/workflows/cpp.yml'
+      - 'dockerfiles/minishell/**'
+      - '.github/workflows/minishell.yml'
   workflow_dispatch:
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository }}/cpp
+          images: ghcr.io/${{ github.repository }}/minishell
           tags: |
             type=raw,value=latest
             type=sha,prefix={{date 'YYYYMMDD'}}-
@@ -41,7 +41,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./dockerfiles/cpp
+          context: ./dockerfiles/minishell
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

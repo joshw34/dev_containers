@@ -27,6 +27,7 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     man-pages \
     neovim \
     openssh \
+    readline \
     ripgrep \
     tree-sitter-cli \
     unzip \

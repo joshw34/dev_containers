@@ -1,5 +1,8 @@
 FROM archlinux:latest
 
+COPY ./files/mlx/libmlx.a /usr/local/lib
+COPY ./files/mlx/mlx.h /usr/local/include
+COPY ./files/mlx/man3/ /usr/local/man/man3/
 COPY ./files/norminette-3.3.55-1-x86_64.pkg.tar.zst /tmp/norminette-3.3.55-1-x86_64.pkg.tar.zst
 COPY ./files/setup.sh /usr/local/bin/setup.sh
 COPY ./files/start_ssh.sh /usr/local/bin/start_ssh.sh
@@ -22,11 +25,15 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     git \
     github-cli \
     lazygit \
+    libbsd \
+    libx11 \
+    libxext \
     lldb \
     man-db \
     man-pages \
     neovim \
     openssh \
+    readline \
     ripgrep \
     tree-sitter-cli \
     unzip \
