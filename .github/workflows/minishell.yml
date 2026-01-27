@@ -1,4 +1,4 @@
-name: Build Arch C/C++ Minilibx Dev Container
+name: Build Arch C/C++ Minishell Dev Container
 on:
   schedule:
     - cron: '0 2 * * 0'
