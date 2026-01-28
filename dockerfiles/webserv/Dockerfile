@@ -34,7 +34,6 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     valgrind \
     zsh && \
     pacman -U --noconfirm /tmp/norminette-3.3.55-1-x86_64.pkg.tar.zst && \
-    rm /tmp/norminette-3.3.55-1-x86_64.pkg.tar.zst && \
     curl -fsSL https://claude.ai/install.sh | bash && \
     pacman -Scc --noconfirm && \
     mandb
