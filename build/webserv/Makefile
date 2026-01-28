@@ -1,9 +1,4 @@
-CONTAINER_NAME=go
-
-#Local username, uid and gid (container will create matching user)
-USER_LOGIN = $(shell whoami)
-UID = $(shell id -u)
-GID = $(shell id -g)
+CONTAINER_NAME=webserv
 
 #Host directories to be shared
 HOST_WORK_DIR=$(HOME)/Work
@@ -20,13 +15,13 @@ HOST_CONTAINER_WORK_DIR=$(HOST_CONTAINER_HOME_DIR)/Work
 HOST_CONTAINER_NVIM_CONFIG_DIR=$(HOST_CONTAINER_HOME_DIR)/.config/nvim
 
 #Container mount points (where hosts mounts will be located inside container)
-CONTAINER_HOME_DIR=$(HOME)
+CONTAINER_HOME_DIR=/root
 CONTAINER_WORK_DIR=$(CONTAINER_HOME_DIR)/Work
 CONTAINER_SSH_DIR=$(CONTAINER_HOME_DIR)/.ssh
 CONTAINER_NVIM_CONFIG_DIR=$(CONTAINER_HOME_DIR)/.config/nvim
 
-COMPOSE_FILE = ./files/docker-compose.yml
-ENV_FILE = ./files/.env
+COMPOSE_FILE = docker-compose.yml
+ENV_FILE = .env
 
 all: setup build up
 
@@ -34,9 +29,6 @@ setup: env-file data-dirs
 
 env-file:
 	@if [ ! -f $(ENV_FILE) ]; then \
-		echo "USER_LOGIN=$(USER_LOGIN)" > $(ENV_FILE); \
-		echo "UID=$(UID)" >> $(ENV_FILE); \
-		echo "GID=$(GID)" >> $(ENV_FILE); \
 		echo "HOST_CONTAINER_HOME_DIR=$(HOST_CONTAINER_HOME_DIR)" >> $(ENV_FILE); \
 		echo "HOST_WORK_DIR=$(HOST_WORK_DIR)" >> $(ENV_FILE); \
 		echo "HOST_SSH_DIR=$(HOST_SSH_DIR)" >> $(ENV_FILE); \
@@ -84,4 +76,4 @@ re: fclean all
 logs:
 	docker compose logs -f
 
-.PHONY: all setup env-file secrets data-dirs build up down clean fclean re logs
+.PHONY: all setup env-file data-dirs build up down clean fclean re logs

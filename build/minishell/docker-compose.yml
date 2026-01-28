@@ -1,10 +1,10 @@
-name: cpp
+name: minishell
 
 services:
-  cpp:
-    image: ghcr.io/joshw34/dev_containers/cpp:latest
+  minishell:
+    image: ghcr.io/joshw34/dev_containers/minishell:latest
     pull_policy: always
-    container_name: cpp
+    container_name: minishell
     command: /bin/bash -c "/usr/local/bin/setup.sh && sleep infinity"
     environment:
       - DISPLAY=${DISPLAY}
@@ -18,5 +18,5 @@ services:
       - ${HOST_SSH_DIR}:${CONTAINER_SSH_DIR}
       #- ${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK}
     network_mode: "host"
-    hostname: cpp
+    hostname: minishell
     restart: unless-stopped

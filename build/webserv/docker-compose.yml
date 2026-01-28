@@ -1,10 +1,10 @@
-name: cpp
+name: webserv
 
 services:
-  cpp:
-    image: ghcr.io/joshw34/dev_containers/cpp:latest
+  webserv:
+    image: ghcr.io/joshw34/dev_containers/webserv:latest
     pull_policy: always
-    container_name: cpp
+    container_name: webserv
     command: /bin/bash -c "/usr/local/bin/setup.sh && sleep infinity"
     environment:
       - DISPLAY=${DISPLAY}
@@ -18,5 +18,5 @@ services:
       - ${HOST_SSH_DIR}:${CONTAINER_SSH_DIR}
       #- ${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK}
     network_mode: "host"
-    hostname: cpp
+    hostname: webserv
     restart: unless-stopped
