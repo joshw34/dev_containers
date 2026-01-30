@@ -5,18 +5,25 @@ services:
     image: ghcr.io/joshw34/dev_containers/webserv:latest
     pull_policy: always
     container_name: webserv
-    command: /bin/bash -c "/usr/local/bin/setup.sh && sleep infinity"
+    command: /bin/bash -c "/usr/local/bin/setup.sh && /usr/local/bin/start_ssh.sh"
     environment:
       - DISPLAY=${DISPLAY}
-#      - SSH_AUTH_SOCK=${SSH_AUTH_SOCK}
+    ports:
+      - "8080-8090:8080-8090"
+      - "50004:50004"
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ~/.Xauthority:/${CONTAINER_HOME_DIR}/.Xauthority:rw
-      - ${HOST_CONTAINER_HOME_DIR}:${CONTAINER_HOME_DIR}
+      - webserv:${CONTAINER_HOME_DIR}
       - ${HOST_NVIM_CONFIG_DIR}:${CONTAINER_NVIM_CONFIG_DIR}
       - ${HOST_WORK_DIR}:${CONTAINER_WORK_DIR}
-      - ${HOST_SSH_DIR}:${CONTAINER_SSH_DIR}
-      #- ${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK}
-    network_mode: "host"
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp=unconfined
+    network_mode: "bridge"
     hostname: webserv
     restart: unless-stopped
+
+volumes:
+  webserv:
