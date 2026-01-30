@@ -1,5 +1,5 @@
 # Basic settings
-Port 22
+Port 50001
 PermitRootLogin prohibit-password
 PubkeyAuthentication yes
 PasswordAuthentication no
