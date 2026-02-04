@@ -18,6 +18,7 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     eza \
     git \
     go \
+    gofumpt \
     gopls \
     github-cli \
     lazygit \
