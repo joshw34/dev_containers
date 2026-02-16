@@ -1,4 +1,4 @@
-CONTAINER_NAME=cpp
+CONTAINER_NAME=go
 
 #Host directories to be shared
 HOST_WORK_DIR=$(HOME)/Work
@@ -72,6 +72,9 @@ fclean: clean
 	@echo "Full clean complete"
 
 re: fclean all
+
+exec:
+	docker exec -it go zsh
 
 logs:
 	docker compose logs -f
