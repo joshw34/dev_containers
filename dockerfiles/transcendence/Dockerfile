@@ -23,23 +23,23 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     neovim \
     nodejs \
     npm \
-    pnpm \
-    prettier \
     openssh \
     ripgrep \
     tree-sitter-cli \
-    typescript \
-    typescript-language-server \
     unzip \
     unrar \
-    vscode-css-languageserver \
-    vscode-html-languageserver \
-    vscode-json-languageserver \
     wl-clipboard \
     zsh && \
     curl -fsSL https://claude.ai/install.sh | bash && \
     pacman -Scc --noconfirm && \
     mandb
+
+RUN npm install -g \
+        eslint \
+        prettier \
+        typescript \
+        typescript-language-server \
+        vscode-langservers-extracted
 
 ENV DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 ENV TERM=xterm-256color
