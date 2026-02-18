@@ -15,6 +15,8 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     curl \
     debuginfod \
     eslint \
+    eslint_d \
+    eslint-language-server \
     eza \
     git \
     github-cli \
