@@ -34,6 +34,7 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     unrar \
     valgrind \
     vscode-html-languageserver \
+    wl-clipboard \
     zsh && \
     curl -fsSL https://claude.ai/install.sh | bash && \
     pacman -Scc --noconfirm && \

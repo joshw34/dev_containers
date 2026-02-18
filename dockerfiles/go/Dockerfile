@@ -31,6 +31,7 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     tree-sitter-cli \
     unrar \
     unzip \
+    wl-clipboard \
     zsh && \
     curl -fsSL https://claude.ai/install.sh | bash && \
     pacman -Scc --noconfirm && \

@@ -38,6 +38,7 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     vscode-css-languageserver \
     vscode-html-languageserver \
     vscode-json-languageserver \
+    wl-clipboard \
     zsh && \
     curl -fsSL https://claude.ai/install.sh | bash && \
     pacman -Scc --noconfirm && \
