@@ -35,7 +35,8 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     mandb
 
 RUN npm install -g \
-        eslint \
+        eslint@9 \
+        jiti \
         prettier \
         typescript \
         typescript-language-server \
