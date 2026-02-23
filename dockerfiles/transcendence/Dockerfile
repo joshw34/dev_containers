@@ -13,12 +13,15 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     btop \
     curl \
     eza \
+    gcc \
     git \
     github-cli \
     lazygit \
+    make \
     man-db \
     man-pages \
     man-pages-posix \
+    musl-dev \
     neovim \
     openssh \
     ripgrep \
