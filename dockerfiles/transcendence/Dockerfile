@@ -6,6 +6,7 @@ COPY ./files/sshd_config /etc/ssh/sshd_config
 
 RUN apk update && \
     apk add --no-cache \
+    bash \
     bat \
     btop \
     curl \
