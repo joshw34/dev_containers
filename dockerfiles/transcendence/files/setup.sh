@@ -7,10 +7,6 @@ P10K_DIR="$OMZ_CUSTOM/themes/powerlevel10k"
 AUTOSUGGEST_DIR="$OMZ_CUSTOM/plugins/zsh-autosuggestions"
 HIGHLIGHTING_DIR="$OMZ_CUSTOM/plugins/zsh-syntax-highlighting"
 
-# Configure git
-git config --global user.email "joshw@joshw.com"
-git config --global user.name "joshw"
-
 # Create .zshrc if not already present
 if [ ! -f "$ZSHRC" ]; then
   touch "$ZSHRC"
