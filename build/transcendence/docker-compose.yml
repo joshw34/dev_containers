@@ -11,7 +11,7 @@ services:
     ports:
       - "50006:50006"
       - "3000:3000"
-      - "3001:3001"
+      - "5173:5173"
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ~/.Xauthority:/${CONTAINER_HOME_DIR}/.Xauthority:rw
