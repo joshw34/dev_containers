@@ -27,13 +27,13 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     ripgrep \
     tree-sitter-cli \
     unzip \
+    vim \
     wl-clipboard \
     zsh && \
     curl -fsSL https://claude.ai/install.sh | bash && \
     mandb
 
 RUN npm install -g \
-        jiti \
         typescript-language-server \
         vscode-langservers-extracted
 
