@@ -2,7 +2,6 @@ CONTAINER_NAME=transcendence
 
 #Host directories to be shared
 HOST_WORK_DIR=$(HOME)/Work
-HOST_SSH_DIR=$(HOME)/.ssh
 HOST_NVIM_CONFIG_DIR=$(HOME)/.config/nvim
 
 #Persistent host storage for container homes
@@ -10,14 +9,12 @@ HOST_CONTAINER_DATA_DIR=$(HOME)/.container_data
 
 #Host mount points (need to be created so docker doesn't create as root)
 HOST_CONTAINER_HOME_DIR=$(HOST_CONTAINER_DATA_DIR)/$(CONTAINER_NAME)
-HOST_CONTAINER_SSH_DIR=$(HOST_CONTAINER_HOME_DIR)/.ssh
 HOST_CONTAINER_WORK_DIR=$(HOST_CONTAINER_HOME_DIR)/Work
 HOST_CONTAINER_NVIM_CONFIG_DIR=$(HOST_CONTAINER_HOME_DIR)/.config/nvim
 
 #Container mount points (where hosts mounts will be located inside container)
 CONTAINER_HOME_DIR=/root
 CONTAINER_WORK_DIR=$(CONTAINER_HOME_DIR)/Work
-CONTAINER_SSH_DIR=$(CONTAINER_HOME_DIR)/.ssh
 CONTAINER_NVIM_CONFIG_DIR=$(CONTAINER_HOME_DIR)/.config/nvim
 
 COMPOSE_FILE = docker-compose.yml
@@ -31,11 +28,9 @@ env-file:
 	@if [ ! -f $(ENV_FILE) ]; then \
 		echo "HOST_CONTAINER_HOME_DIR=$(HOST_CONTAINER_HOME_DIR)" >> $(ENV_FILE); \
 		echo "HOST_WORK_DIR=$(HOST_WORK_DIR)" >> $(ENV_FILE); \
-		echo "HOST_SSH_DIR=$(HOST_SSH_DIR)" >> $(ENV_FILE); \
 		echo "HOST_NVIM_CONFIG_DIR=$(HOST_NVIM_CONFIG_DIR)" >> $(ENV_FILE); \
 		echo "CONTAINER_HOME_DIR=$(CONTAINER_HOME_DIR)" >> $(ENV_FILE); \
 		echo "CONTAINER_WORK_DIR=$(CONTAINER_WORK_DIR)" >> $(ENV_FILE); \
-		echo "CONTAINER_SSH_DIR=$(CONTAINER_SSH_DIR)" >> $(ENV_FILE); \
 		echo "CONTAINER_NVIM_CONFIG_DIR=$(CONTAINER_NVIM_CONFIG_DIR)" >> $(ENV_FILE); \
 		echo "Generated .env file";\
 	fi
@@ -43,11 +38,9 @@ env-file:
 #Ensure all required host directories exist so docker doesn't create as root
 data-dirs:
 	@mkdir -p $(HOST_WORK_DIR)
-	@mkdir -p $(HOST_SSH_DIR)
 	@mkdir -p $(HOST_NVIM_CONFIG_DIR)
 	@mkdir -p $(HOST_CONTAINER_DATA_DIR)
 	@mkdir -p $(HOST_CONTAINER_HOME_DIR)
-	@mkdir -p $(HOST_CONTAINER_SSH_DIR)
 	@mkdir -p $(HOST_CONTAINER_WORK_DIR)
 	@mkdir -p $(HOST_CONTAINER_NVIM_CONFIG_DIR)
 

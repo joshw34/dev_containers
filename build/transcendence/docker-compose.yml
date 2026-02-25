@@ -10,10 +10,12 @@ services:
       - DISPLAY=${DISPLAY}
     ports:
       - "50006:50006"
+      - "3000:3000"
+      - "3001:3001"
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
       - ~/.Xauthority:/${CONTAINER_HOME_DIR}/.Xauthority:rw
-      - transcendence:${CONTAINER_HOME_DIR}
+      - ${HOST_CONTAINER_HOME_DIR}:${CONTAINER_HOME_DIR}
       - ${HOST_NVIM_CONFIG_DIR}:${CONTAINER_NVIM_CONFIG_DIR}
       - ${HOST_WORK_DIR}:${CONTAINER_WORK_DIR}
     cap_add:
@@ -23,6 +25,3 @@ services:
     network_mode: "bridge"
     hostname: transcendence
     restart: unless-stopped
-
-volumes:
-  transcendence:
