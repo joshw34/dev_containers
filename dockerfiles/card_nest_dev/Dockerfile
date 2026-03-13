@@ -27,7 +27,7 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     wl-clipboard \
     zsh && \
     mandb && \
-    passwd -d root
+    echo 'root:password' | chpasswd
 
 RUN npm install -g \
         typescript-language-server \
