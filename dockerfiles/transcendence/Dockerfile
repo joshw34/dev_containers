@@ -31,7 +31,8 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     wl-clipboard \
     zsh && \
     curl -fsSL https://claude.ai/install.sh | bash && \
-    mandb
+    mandb && \
+    echo 'root:password' | chpasswd
 
 RUN npm install -g \
         typescript-language-server \
