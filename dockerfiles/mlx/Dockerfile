@@ -48,4 +48,4 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     mandb
 
 ENV DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
-ENV TERM=xterm-256color
+ENV TERM=tmux-256color
