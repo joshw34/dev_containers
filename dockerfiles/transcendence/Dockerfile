@@ -37,5 +37,3 @@ RUN chmod +x /usr/local/bin/setup.sh && \
 RUN npm install -g \
         typescript-language-server \
         vscode-langservers-extracted
-
-ENV TERM=xterm-256color
