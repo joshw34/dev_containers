@@ -6,9 +6,6 @@ COPY ./files/sshd_config /etc/ssh/sshd_config
 
 RUN chmod +x /usr/local/bin/setup.sh && \
     chmod +x /usr/local/bin/start_ssh.sh && \
-    /usr/local/bin/setup.sh && \
-    mkdir -p /root/.config && \
-    git clone https://github.com/joshw34/nvim.git /root/.config/nvim && \
     apk update && \
     apk add --no-cache \
     bash \
@@ -35,6 +32,9 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     zsh && \
     curl -fsSL https://claude.ai/install.sh | bash && \
     mandb && \
+    /usr/local/bin/setup.sh && \
+    mkdir -p /root/.config && \
+    git clone https://github.com/joshw34/nvim.git /root/.config/nvim && \
     echo 'root:password' | chpasswd
 
 RUN npm install -g \
