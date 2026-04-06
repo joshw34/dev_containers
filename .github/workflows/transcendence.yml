@@ -1,4 +1,4 @@
-name: Build Arch Transcendence Dev Container
+name: Build Transcendence Dev Container
 on:
   schedule:
     - cron: '0 2 * * 0'
