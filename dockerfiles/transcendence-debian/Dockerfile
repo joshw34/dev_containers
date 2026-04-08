@@ -7,7 +7,7 @@ COPY ./files/sshd_config /etc/ssh/sshd_config
 RUN chmod +x /usr/local/bin/setup.sh && \
     chmod +x /usr/local/bin/start_ssh.sh && \
     apt update && \
-    apk add --no-cache \
+    apt install -y \
     bash \
     bat \
     btop \
