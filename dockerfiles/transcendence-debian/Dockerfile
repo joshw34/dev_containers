@@ -18,7 +18,7 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     gh \
     lazygit \
     make \
-    openssh \
+    openssh-server \
     ripgrep \
     tree-sitter-cli \
     unzip \
