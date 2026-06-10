@@ -38,7 +38,11 @@ RUN sed -i 's/^NoExtract.*man/# &/' /etc/pacman.conf && \
     rm /tmp/norminette-3.3.55-1-x86_64.pkg.tar.zst && \
     curl -fsSL https://claude.ai/install.sh | bash && \
     pacman -Scc --noconfirm && \
-    mandb
+    mandb && \
+    /usr/local/bin/setup.sh && \
+    mkdir -p /root/.config && \
+    git clone https://github.com/joshw34/nvim.git /root/.config/nvim && \
+    echo 'root:password' | chpasswd
 
 ENV DEBUGINFOD_URLS="https://debuginfod.archlinux.org"
 ENV TERM=tmux-256color

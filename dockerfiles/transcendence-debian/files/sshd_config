@@ -1,4 +1,4 @@
-Port 50006
+Port 52725
 PermitRootLogin yes
 PasswordAuthentication yes
 PermitEmptyPasswords yes
@@ -7,4 +7,3 @@ StrictModes no
 UseDNS no
 TCPKeepAlive yes
 Subsystem sftp /usr/lib/ssh/sftp-server
-

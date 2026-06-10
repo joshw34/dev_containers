@@ -1,21 +1,9 @@
-# Basic settings
-Port 50001
-PermitRootLogin prohibit-password
-PubkeyAuthentication yes
-PasswordAuthentication no
-AuthenticationMethods publickey
-
-# Use writable authorized_keys location
-AuthorizedKeysFile /root/.ssh/authorized_keys
-
-# Security
-StrictModes yes
-MaxAuthTries 3
-MaxSessions 10
-
-# Performance
+Port 52725
+PermitRootLogin yes
+PasswordAuthentication yes
+PermitEmptyPasswords yes
+AuthenticationMethods password
+StrictModes no
 UseDNS no
 TCPKeepAlive yes
-
-# Subsystems
 Subsystem sftp /usr/lib/ssh/sftp-server
