@@ -24,6 +24,7 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     apt update && \
     apt install -y \
     bat \
+    bear \
     btop \
     curl \
     fzf \
