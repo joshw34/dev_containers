@@ -18,7 +18,6 @@ RUN cargo install asm-lsp --root /opt/ts
 FROM ubuntu:22.04
 COPY ./files/setup.sh /usr/local/bin/setup.sh
 COPY ./files/start_ssh.sh /usr/local/bin/start_ssh.sh
-COPY ./files/sshd_config /etc/ssh/sshd_config
 COPY --from=rust-builder /opt/ts/bin/ /usr/local/bin/
 RUN chmod +x /usr/local/bin/setup.sh && \
     chmod +x /usr/local/bin/start_ssh.sh && \
@@ -60,5 +59,6 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     git clone https://github.com/joshw34/nvim.git /root/.config/nvim && \
     # Set root password for ssh access
     echo 'root:password' | chpasswd
+COPY ./files/sshd_config /etc/ssh/sshd_config
 ENV TERM="tmux-256color"
 ENV FZF_DEFAULT_OPTS="--border --preview 'bat --color=always {}' --color=dark"
