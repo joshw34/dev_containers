@@ -1,18 +1,20 @@
-# Build tree-sitter-cli
+# Build tree-sitter-cli and asm-lsp
 FROM ubuntu:22.04 AS rust-builder
 RUN apt-get update && \
     apt-get install -y \
     build-essential \
     clang \
     curl \
-    libclang-dev && \
+    libclang-dev \
+    libssl-dev \
+    pkg-config && \
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 ENV PATH="/root/.cargo/bin:${PATH}"
 RUN cargo install tree-sitter-cli --root /opt/ts
 RUN cargo install asm-lsp --root /opt/ts
 
 
-# Final image (Pulls tree-sitter binary without rust toolchain)
+# Final image (libsssl3 req. for asm-lsp)
 FROM ubuntu:22.04
 COPY ./files/setup.sh /usr/local/bin/setup.sh
 COPY ./files/start_ssh.sh /usr/local/bin/start_ssh.sh
@@ -30,6 +32,7 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     g++ \
     gdb \
     git \
+    libssl3 \
     make \
     nasm \
     openssh-server \
