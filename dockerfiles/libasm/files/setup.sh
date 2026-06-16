@@ -55,8 +55,8 @@ alias lst="eza -1T --icons=always"
 alias lsat="eza -a -1T --icons=always"
 alias lsx="eza --icons never --absolute on -1"
 # bat
-alias bat="bat --paging=never"
-alias bata="bat -A --paging=never"
+alias bat="batcat --paging=never"
+alias bata="batcat -A --paging=never"
 EOF
 fi
 

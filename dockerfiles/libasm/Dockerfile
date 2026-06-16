@@ -26,6 +26,8 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     bat \
     bear \
     btop \
+    clangd \
+    clang-format \
     curl \
     fzf \
     gcc \
