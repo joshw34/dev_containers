@@ -39,6 +39,7 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     nasm \
     openssh-server \
     ripgrep \
+    strace \
     unzip \
     wl-clipboard \
     zsh && \
