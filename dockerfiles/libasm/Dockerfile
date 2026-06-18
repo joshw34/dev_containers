@@ -22,7 +22,7 @@ COPY --from=rust-builder /opt/ts/bin/ /usr/local/bin/
 RUN chmod +x /usr/local/bin/setup.sh && \
     chmod +x /usr/local/bin/start_ssh.sh && \
     apt update && \
-    unminimize && \
+    yes | unminimize && \
     apt install -y \
     bat \
     bear \
