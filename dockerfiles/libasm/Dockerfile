@@ -22,6 +22,7 @@ COPY --from=rust-builder /opt/ts/bin/ /usr/local/bin/
 RUN chmod +x /usr/local/bin/setup.sh && \
     chmod +x /usr/local/bin/start_ssh.sh && \
     apt update && \
+    unminimize && \
     apt install -y \
     bat \
     bear \
@@ -36,6 +37,7 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     git \
     libssl3 \
     make \
+    man-db \
     nasm \
     openssh-server \
     ripgrep \
