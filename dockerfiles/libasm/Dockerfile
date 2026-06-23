@@ -43,6 +43,7 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     ripgrep \
     strace \
     unzip \
+    valgrind \
     wl-clipboard \
     zsh && \
     mkdir -p /opt/lazygit /opt/nvim /opt/eza && \
