@@ -27,15 +27,14 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     bat \
     bear \
     btop \
+    clang \
     clangd \
     clang-format \
     curl \
     fzf \
-    gcc \
-    g++ \
-    gdb \
     git \
     libssl3 \
+    lldb \
     make \
     man-db \
     nasm \
