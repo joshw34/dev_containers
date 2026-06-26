@@ -66,5 +66,5 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     # Set root password for ssh access
     echo 'root:password' | chpasswd
 COPY ./files/sshd_config /etc/ssh/sshd_config
-ENV TERM="tmux-256color"
+ENV TERM="screen-256color"
 ENV FZF_DEFAULT_OPTS="--border --preview 'bat --color=always {}' --color=dark"
