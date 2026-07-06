@@ -36,7 +36,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
     btop \
     clang-12 \
     curl \
-    debuginfod \
     fzf \
     g++ \
     gcc \
