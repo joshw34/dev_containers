@@ -7,3 +7,5 @@ StrictModes no
 UseDNS no
 TCPKeepAlive yes
 Subsystem sftp /usr/lib/ssh/sftp-server
+X11Forwarding yes
+X11UseLocalhost yes
