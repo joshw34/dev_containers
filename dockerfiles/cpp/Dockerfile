@@ -88,6 +88,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
     mv libmlx.a /usr/local/lib && \
     mv mlx.h /usr/local/include && \
     mv man/man3/* /usr/local/man/man3 && \
+    cd / && \
     rm -rf /tmp/mlx && \
     # Install claude code
     curl -fsSL https://claude.ai/install.sh | bash && \
