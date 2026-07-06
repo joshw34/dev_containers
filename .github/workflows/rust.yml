@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'dockerfiles/rust/**'
+      - 'rust/**'
       - '.github/workflows/rust.yml'
   workflow_dispatch:
 

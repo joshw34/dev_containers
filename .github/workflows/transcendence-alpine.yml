@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'dockerfiles/transcendence-alpine/**'
+      - 'transcendence-alpine/**'
       - '.github/workflows/transcendence-alpine.yml'
   workflow_dispatch:
 

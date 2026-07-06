@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'dockerfiles/transcendence-debian/**'
+      - 'transcendence-debian/**'
       - '.github/workflows/transcendence-debian.yml'
   workflow_dispatch:
 

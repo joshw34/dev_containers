@@ -1,11 +1,11 @@
-name: Build Arch C/C++ Dev Container
+name: Build C/C++ Dev Container
 on:
   schedule:
     - cron: '0 2 * * 0'
   push:
     branches: [main]
     paths:
-      - 'dockerfiles/cpp/**'
+      - 'cpp/**'
       - '.github/workflows/cpp.yml'
   workflow_dispatch:
 
