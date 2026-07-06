@@ -35,9 +35,6 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
     build-essential \
     btop \
     clang \
-    clangd \
-    clang-format \
-    clang-tidy \
     curl \
     debuginfod \
     fzf \
