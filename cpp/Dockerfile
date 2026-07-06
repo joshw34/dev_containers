@@ -34,7 +34,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
     bear \
     build-essential \
     btop \
-    clang \
+    clang-12 \
     curl \
     debuginfod \
     fzf \
@@ -65,6 +65,10 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone &
     wl-clipboard \
     xauth \
     zsh && \
+    # Symlink clang-12 -> clang
+    ln -s /usr/bin/clang-12 /usr/bin/clang && \
+    ln -s /usr/bin/clang++-12 /usr/bin/clang++ && \
+    # Create /opt dirs
     mkdir -p /opt/lazygit /opt/nvim /opt/eza && \
     # Install lazygit
     curl -L https://github.com/jesseduffield/lazygit/releases/download/v0.62.2/lazygit_0.62.2_linux_x86_64.tar.gz | tar xz -C /opt/lazygit && \
