@@ -1,12 +1,12 @@
-name: Build C/C++ Dev Container (Arch)
+name: Build C/C++ Dev Container (Ubuntu 22.04)
 on:
   schedule:
     - cron: '0 2 * * 0'
   push:
     branches: [main]
     paths:
-      - 'cpp/**'
-      - '.github/workflows/cpp.yml'
+      - 'cpp-42/**'
+      - '.github/workflows/cpp-42.yml'
   workflow_dispatch:
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/${{ github.repository }}/cpp
+          images: ghcr.io/${{ github.repository }}/cpp-42
           tags: |
             type=raw,value=latest
             type=sha,prefix={{date 'YYYYMMDD'}}-
@@ -41,7 +41,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v5
         with:
-          context: ./cpp
+          context: ./cpp-42
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
