@@ -14,6 +14,7 @@ RUN chmod +x /usr/local/bin/setup.sh && \
     curl \
     eza \
     gcc \
+    gcompat \
     git \
     github-cli \
     lazygit \
