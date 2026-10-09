@@ -1,4 +1,4 @@
-name: Build Go Dev Container
+name: Build Go Dev Container (Arch)
 on:
   schedule:
     - cron: "0 2 * * 0"
